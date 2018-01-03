@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LivePlayerVC">
+            <connections>
+                <outlet property="chatTable" destination="tXL-xm-iqd" id="09i-GK-Ypf"/>
+                <outlet property="onlineNumLabel" destination="1Dz-DA-SJc" id="8AE-m9-gm4"/>
+                <outlet property="playerPanelView" destination="T3u-Xi-j8d" id="v7P-xt-AKW"/>
+                <outlet property="sendMessageButton" destination="gvQ-Pk-OWl" id="ECE-ZX-TjD"/>
+                <outlet property="startPlayButton" destination="LxA-kP-Xbq" id="acR-TG-QXw"/>
+                <outlet property="stopPlayButton" destination="XRn-SQ-4Vp" id="WXB-CC-ERp"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T3u-Xi-j8d">
+                    <rect key="frame" x="0.0" y="64" width="320" height="200"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="在线人数：999999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Dz-DA-SJc">
+                            <rect key="frame" x="184" y="169" width="128" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tXL-xm-iqd">
+                    <rect key="frame" x="0.0" y="264" width="320" height="256"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="256" id="n3f-sM-uov"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="cDA-qd-oow"/>
+                        <outlet property="delegate" destination="-1" id="ZVF-xD-Imz"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LxA-kP-Xbq">
+                    <rect key="frame" x="0.0" y="528" width="80" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="a1f-3G-vjs"/>
+                        <constraint firstAttribute="height" constant="40" id="vQz-bc-qR6"/>
+                    </constraints>
+                    <state key="normal" title="start play"/>
+                    <connections>
+                        <action selector="playButtonPressed:" destination="-1" eventType="touchUpInside" id="5hD-ax-Tva"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XRn-SQ-4Vp">
+                    <rect key="frame" x="82" y="528" width="80" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="OME-EN-5pP"/>
+                    </constraints>
+                    <state key="normal" title="stop play"/>
+                    <connections>
+                        <action selector="stopButtonPressed:" destination="-1" eventType="touchUpInside" id="9EX-IL-q4M"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvQ-Pk-OWl">
+                    <rect key="frame" x="170" y="528" width="134" height="40"/>
+                    <state key="normal" title="send message test"/>
+                    <connections>
+                        <action selector="sendButtonPressed:" destination="-1" eventType="touchUpInside" id="1fb-kj-dIe"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="tXL-xm-iqd" firstAttribute="top" secondItem="T3u-Xi-j8d" secondAttribute="bottom" id="3tD-Nh-daD"/>
+                <constraint firstItem="gvQ-Pk-OWl" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="4FE-TS-6sp"/>
+                <constraint firstItem="XRn-SQ-4Vp" firstAttribute="top" secondItem="gvQ-Pk-OWl" secondAttribute="top" id="6Ze-bS-0G5"/>
+                <constraint firstItem="tXL-xm-iqd" firstAttribute="leading" secondItem="LxA-kP-Xbq" secondAttribute="leading" id="Erq-3f-Ig8"/>
+                <constraint firstAttribute="trailing" secondItem="T3u-Xi-j8d" secondAttribute="trailing" id="FWq-Yz-dMc"/>
+                <constraint firstItem="T3u-Xi-j8d" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MoJ-dA-TnE"/>
+                <constraint firstItem="T3u-Xi-j8d" firstAttribute="leading" secondItem="tXL-xm-iqd" secondAttribute="leading" id="XJP-wW-mjF"/>
+                <constraint firstItem="XRn-SQ-4Vp" firstAttribute="leading" secondItem="LxA-kP-Xbq" secondAttribute="trailing" constant="2" id="bE7-Pz-ZgL"/>
+                <constraint firstItem="T3u-Xi-j8d" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="dCF-gx-Gur"/>
+                <constraint firstItem="XRn-SQ-4Vp" firstAttribute="baseline" secondItem="gvQ-Pk-OWl" secondAttribute="firstBaseline" id="eet-Gj-DpT"/>
+                <constraint firstItem="LxA-kP-Xbq" firstAttribute="top" secondItem="XRn-SQ-4Vp" secondAttribute="top" id="ehU-6p-JNZ"/>
+                <constraint firstItem="LxA-kP-Xbq" firstAttribute="baseline" secondItem="XRn-SQ-4Vp" secondAttribute="firstBaseline" id="fHF-qK-750"/>
+                <constraint firstItem="LxA-kP-Xbq" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="hsM-mF-XNK"/>
+                <constraint firstItem="LxA-kP-Xbq" firstAttribute="top" secondItem="tXL-xm-iqd" secondAttribute="bottom" constant="8" symbolic="YES" id="jBj-Nv-aUz"/>
+                <constraint firstItem="T3u-Xi-j8d" firstAttribute="trailing" secondItem="tXL-xm-iqd" secondAttribute="trailing" id="raW-4c-H6Z"/>
+                <constraint firstItem="gvQ-Pk-OWl" firstAttribute="leading" secondItem="XRn-SQ-4Vp" secondAttribute="trailing" constant="8" symbolic="YES" id="tUq-Pq-deN"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="-1096" y="-56"/>
+        </view>
+    </objects>
+</document>
